@@ -10,7 +10,8 @@ const {
   createUser,
   updateUser,
   deleteUser,
-} = require("../../controllers/users");
+} = require("../../controllers/api/users");
+const friends = require("./friends");
 
 // create a new instance of a router
 const router = Router();
@@ -21,6 +22,7 @@ router.get("/:id", getUserId);
 router.post("/", createUser);
 router.put("/:id", updateUser);
 router.delete("/:id", deleteUser);
+router.use("/:id/friends", friends);
 
 // export module
 module.exports = router;

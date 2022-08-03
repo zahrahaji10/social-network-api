@@ -1,4 +1,4 @@
-// get users
+// get all users
 const getUsers = (req, res) => {
   try {
     res.send("getUsers");

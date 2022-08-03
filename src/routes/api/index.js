@@ -5,16 +5,16 @@ const { Router } = require("express");
 
 // internal imports
 const users = require("./users");
-const reactions = require("./reactions");
 const thoughts = require("./thoughts");
+const reactions = require("./reactions");
 
 // create a new instance of a router
 const router = Router();
 
 // register the route
 router.use("/users", users);
+router.use("/thoughts", thoughts);
 // router.use("/reactions", reactions);
-// router.use("/thoughts", thoughts);
 
 // export module
 module.exports = router;
