@@ -1,9 +1,8 @@
 // destructure the mongoose to use model and schema
 const { Schema, model } = require("mongoose");
-const moment = require("moment");
 
-// create a default time
-const time = moment().format("MMM Do YY");
+// internal import - time
+const time = require("../../utils/moment");
 
 // define your schema oject  and define your required fields
 const thoughtSchema = {

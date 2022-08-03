@@ -3,37 +3,27 @@ const { Schema, model } = require("mongoose");
 
 // import sub documents for schema
 const Thought = require("./Thought");
+const time = require("../../utils/moment");
 
 // define your schema oject  and define your required fields
-const userSchema = {
+const reactionSchema = {
+  reactionId: {
+    id: Schema.Types.ObjectId,
+  },
+  reactionBody: {
+    type: String,
+    required: true,
+    maxLength: 280,
+  },
   userName: {
     type: String,
-    unique: true,
     required: true,
-    trim: true,
   },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    match: true,
-    minLength: 2,
-    maxLength: 50,
+  createdAt: {
+    type: Date,
+    default: time,
   },
-  thoughts: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Thought",
-    },
-  ],
-  friends: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-    },
-  ],
 };
-
 //!! Create a virtual called friendCount that retrieves the length of the user's friends array field on query.
 
 // create a new instance of mongoose schema which takes on userSchema object
