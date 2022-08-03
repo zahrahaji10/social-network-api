@@ -1,8 +1,6 @@
 // destructure the mongoose to use model and schema
 const { Schema, model } = require("mongoose");
-
-// import sub documents for schema
-const Thought = require("./Thought");
+const isValidEmail = require("../helpers/validEmail");
 
 // define your schema oject  and define your required fields
 const userSchema = {
@@ -16,28 +14,33 @@ const userSchema = {
     type: String,
     required: true,
     unique: true,
+    validate: {
+      validator: isValidEmail,
+      message: "Not a valid Email",
+    },
     match: true,
-    minLength: 2,
-    maxLength: 50,
   },
   thoughts: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Thought",
+      ref: "thought",
     },
   ],
   friends: [
     {
       type: Schema.Types.ObjectId,
-      ref: "User",
+      ref: "user",
     },
   ],
 };
 
-//!! Create a virtual called friendCount that retrieves the length of the user's friends array field on query.
-
 // create a new instance of mongoose schema which takes on userSchema object
 const schema = new Schema(userSchema);
+
+// virtual to get total friends
+schema.virtual("friendCount").get(function () {
+  return this.friends.length;
+});
 
 // create the User model using mongoose class schema
 const User = model("User", schema);

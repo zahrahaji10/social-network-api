@@ -2,7 +2,8 @@
 const { Schema, model } = require("mongoose");
 
 // internal import - time
-const time = require("../../utils/moment");
+const formatDate = require("../../utils/date");
+const reactions = require("./Reaction");
 
 // define your schema oject  and define your required fields
 const thoughtSchema = {
@@ -14,24 +15,23 @@ const thoughtSchema = {
   },
   createdAt: {
     type: Date,
-    default: time,
+    default: Date.now,
+    get: formatDate,
   },
   userName: {
     type: String,
     required: true,
   },
-  reaction: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Reaction",
-    },
-  ],
+  reactions: [reactions],
 };
-
-// !!Create a virtual called reactionCount that retrieves the length of the thought's reactions array field on query.
 
 // create a new instance of mongoose schema which takes on userSchema object
 const schema = new Schema(thoughtSchema);
+
+// virtual to get total thoughts
+schema.virtual("reactionCount").get(function () {
+  return this.friends.length;
+});
 
 // create the Thought model using mongoose class schema
 const Thought = model("Thought", schema);

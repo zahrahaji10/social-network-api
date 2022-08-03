@@ -3,7 +3,7 @@ const express = require("express");
 
 // internal imports
 const routes = require("./routes");
-const { connectToDatabase } = require("./config/connection");
+const connectToDatabase = require("./config/connection");
 
 // new instance of app created
 const app = express();
