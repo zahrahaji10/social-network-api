@@ -1,17 +1,28 @@
 // import express
 const express = require("express");
 
-// set up port
-const PORT = process.env.PORT || 4000;
+// internal imports
+const routes = require("./routes");
+// const connection = require("./config/connection");
 
 // new instance of app created
 const app = express();
+
+// declare a port
+const PORT = process.env.PORT || 4000;
+
+// middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// use internal routers via the express module
+app.use(routes);
 
 // fn to create connection and listen to port
 const init = async () => {
   try {
     // connect to DB
-    await connection.sync({ force: false });
+    // await connection.sync({ force: false });
 
     // server listen on PORT
     app.listen(PORT, () => {
