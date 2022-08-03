@@ -3,7 +3,7 @@ const express = require("express");
 
 // internal imports
 const routes = require("./routes");
-// const connection = require("./config/connection");
+const { connectToDatabase } = require("./config/connection");
 
 // new instance of app created
 const app = express();
@@ -21,8 +21,8 @@ app.use(routes);
 // fn to create connection and listen to port
 const init = async () => {
   try {
-    // connect to DB
-    // await connection.sync({ force: false });
+    // call fn to connect to mongoDB
+    await connectToDatabase();
 
     // server listen on PORT
     app.listen(PORT, () => {
