@@ -30,10 +30,12 @@ const userSchema = {
   friends: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Friend",
+      ref: "User",
     },
   ],
 };
+
+//!! Create a virtual called friendCount that retrieves the length of the user's friends array field on query.
 
 // create a new instance of mongoose schema which takes on userSchema object
 const schema = new Schema(userSchema);

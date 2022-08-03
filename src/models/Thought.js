@@ -1,5 +1,9 @@
 // destructure the mongoose to use model and schema
 const { Schema, model } = require("mongoose");
+const moment = require("moment");
+
+// create a default time
+const time = moment().format("MMM Do YY");
 
 // define your schema oject  and define your required fields
 const thoughtSchema = {
@@ -13,19 +17,19 @@ const thoughtSchema = {
     type: Date,
     default: time,
   },
-  user: [
+  userName: {
+    type: String,
+    required: true,
+  },
+  reaction: [
     {
       type: Schema.Types.ObjectId,
-      ref: "User",
-    },
-  ],
-  friends: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Friends",
+      ref: "Reaction",
     },
   ],
 };
+
+// !!Create a virtual called reactionCount that retrieves the length of the thought's reactions array field on query.
 
 // create a new instance of mongoose schema which takes on userSchema object
 const schema = new Schema(thoughtSchema);
