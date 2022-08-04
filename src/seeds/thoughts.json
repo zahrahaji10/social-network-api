@@ -1,25 +1,25 @@
 [
   {
-    "text": "I like this coding",
-    "createdAt": "2nd January 2022",
+    "text": [],
+    "createdAt": [],
     "userName": "sam-smith",
     "reactions": []
   },
   {
-    "text": "I like this coffee",
-    "createdAt": "24th January 2022",
+    "text": [],
+    "createdAt": [],
     "userName": "alice-smith",
     "reactions": []
   },
   {
-    "text": "I like cooking",
-    "createdAt": "3rd December 2021",
+    "text": [],
+    "createdAt": [],
     "userName": "zahra12",
     "reactions": []
   },
   {
-    "text": "I like hiking",
-    "createdAt": "3rd December 2021",
+    "text": [],
+    "createdAt": [],
     "userName": "bob-smith",
     "reactions": []
   }
