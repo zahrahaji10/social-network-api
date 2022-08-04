@@ -26,12 +26,18 @@ const thoughtSchema = {
 };
 
 // create a new instance of mongoose schema which takes on userSchema object
-const schema = new Schema(thoughtSchema);
+const schema = new Schema(thoughtSchema, {
+  toJSON: {
+    virtuals: true,
+    getters: true,
+  },
+  id: false,
+});
 
 // virtual to get the length of the thought's reactions
-// schema.virtual("reactionCount").get(function () {
-//   return this.reactions.length;
-// });
+schema.virtual("reactionCount").get(function () {
+  return this.reactions.length;
+});
 
 // create the Thought model using mongoose class schema
 const Thought = model("Thought", schema);

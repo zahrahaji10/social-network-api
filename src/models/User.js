@@ -40,12 +40,18 @@ const userSchema = {
 };
 
 // create a new instance of mongoose schema which takes on userSchema object
-const schema = new Schema(userSchema);
+const schema = new Schema(userSchema, {
+  toJSON: {
+    virtuals: true,
+    getters: true,
+  },
+  id: false,
+});
 
 // virtual to get total friends
-// schema.virtual("friendCount").get(function () {
-//   return this.friends.length;
-// });
+schema.virtual("friendCount").get(function () {
+  return this.friends.length;
+});
 
 // create the User model using mongoose class schema
 const User = model("User", schema);
