@@ -19,11 +19,11 @@ const userSchema = {
     type: String,
     required: true,
     unique: true,
-    validate: {
-      validator: validateEmail,
-      message: "Not a valid Email",
-    },
-    match: true,
+    // validate: {
+    //   validator: validateEmail,
+    //   message: "Not a valid Email",
+    // },
+    // match: true,
   },
   thoughts: [
     {
