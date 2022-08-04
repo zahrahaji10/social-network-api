@@ -26,7 +26,12 @@ const reactionSchema = {
 };
 
 // create a new instance of mongoose schema which takes on userSchema object
-const schema = new Schema(reactionSchema);
+const schema = new Schema(reactionSchema, {
+  toJSON: {
+    getters: true,
+  },
+  id: false,
+});
 
 // export the model
 module.exports = schema;

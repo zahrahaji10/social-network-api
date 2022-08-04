@@ -28,13 +28,13 @@ const userSchema = {
   thoughts: [
     {
       type: Schema.Types.ObjectId,
-      ref: "thought",
+      ref: "Thought",
     },
   ],
   friends: [
     {
       type: Schema.Types.ObjectId,
-      ref: "user",
+      ref: "User",
     },
   ],
 };
@@ -42,7 +42,6 @@ const userSchema = {
 // create a new instance of mongoose schema which takes on userSchema object
 const schema = new Schema(userSchema, {
   toJSON: {
-    virtuals: true,
     getters: true,
   },
   id: false,

@@ -3,24 +3,24 @@
     "text": "I like this coding",
     "createdAt": "2nd January 2022",
     "userName": "sam-smith",
-    "reaction": [{}]
+    "reactions": []
   },
   {
     "text": "I like this coffee",
     "createdAt": "24th January 2022",
     "userName": "alice-smith",
-    "reaction": [{}]
+    "reactions": []
   },
   {
     "text": "I like cooking",
     "createdAt": "3rd December 2021",
     "userName": "zahra12",
-    "reaction": [{}]
+    "reactions": []
   },
   {
     "text": "I like hiking",
     "createdAt": "3rd December 2021",
     "userName": "bob-smith",
-    "reaction": [{}]
+    "reactions": []
   }
 ]

@@ -3,24 +3,24 @@
     "userName": "bob-smith",
     "email": "bobsmith@gmail.com",
     "thoughts": "I like this platform",
-    "friends": [{ "id": 1 }]
+    "friends": []
   },
   {
     "userName": "sam-smith",
     "email": "samsmith@gmail.com",
-    "thoughts": [{ "id": 2 }],
-    "friends": [{ "id": 4 }, { "id": 3 }, { "id": 1 }]
+    "thoughts": [],
+    "friends": []
   },
   {
     "userName": "alice-smith",
     "email": "alicesmith@gmail.com",
-    "thoughts": [{ "id": 3 }],
-    "friends": [{ "id": 4 }, { "id": 2 }, { "id": 1 }]
+    "thoughts": [],
+    "friends": []
   },
   {
     "userName": "zahra12",
     "email": "zahra@gmail.com",
-    "thoughts": [{ "id": 4 }],
-    "friends": [{ "id": 3 }, { "id": 2 }, { "id": 1 }]
+    "thoughts": [],
+    "friends": []
   }
 ]

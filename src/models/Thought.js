@@ -28,7 +28,6 @@ const thoughtSchema = {
 // create a new instance of mongoose schema which takes on userSchema object
 const schema = new Schema(thoughtSchema, {
   toJSON: {
-    virtuals: true,
     getters: true,
   },
   id: false,
