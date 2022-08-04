@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "body": "I started using this platform and now I like it a lot. ",
+    "userName": "zahra12",
+    "createdAt": "2nd January 2022"
+  },
+  {
+    "id": 1,
+    "body": "I have met many lovely people using this social network",
+    "userName": "alice-smith",
+    "createdAt": "22nd January 2022"
+  },
+  {
+    "id": 1,
+    "body": "I love the weather, its perfect!",
+    "userName": "bob-smith",
+    "createdAt": "1st February 2021"
+  },
+  {
+    "id": 1,
+    "body": "I have been using this platform for a long time, its one of my fav",
+    "userName": "sam-smith",
+    "createdAt": "30th September 2021"
+  }
+]

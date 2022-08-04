@@ -7,7 +7,7 @@ const reactions = require("./Reaction");
 
 // define your schema oject  and define your required fields
 const thoughtSchema = {
-  thoughtText: {
+  text: {
     type: String,
     required: true,
     minLength: 1,
@@ -28,9 +28,9 @@ const thoughtSchema = {
 // create a new instance of mongoose schema which takes on userSchema object
 const schema = new Schema(thoughtSchema);
 
-// virtual to get total thoughts
+// virtual to get the length of the thought's reactions
 schema.virtual("reactionCount").get(function () {
-  return this.friends.length;
+  return this.reactions.length;
 });
 
 // create the Thought model using mongoose class schema
