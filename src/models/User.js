@@ -1,11 +1,10 @@
 // destructure the mongoose to use model and schema
 const { Schema, model } = require("mongoose");
 
-function validateEmail(email) {
-  const res =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return res.test(String(email).toLowerCase());
-}
+const validateEmail = (email) => {
+  const validEmail = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+  return validEmail.test(email);
+};
 
 // define your schema oject  and define your required fields
 const userSchema = {
@@ -19,11 +18,14 @@ const userSchema = {
     type: String,
     required: true,
     unique: true,
-    // validate: {
-    //   validator: validateEmail,
-    //   message: "Not a valid Email",
-    // },
-    // match: true,
+    validate: {
+      validator: validateEmail,
+      message: "invalid email",
+    },
+    match: [
+      /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/,
+      "Please enter a valid email",
+    ],
   },
   thoughts: [
     {

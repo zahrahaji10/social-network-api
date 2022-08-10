@@ -8,6 +8,7 @@ const formatDate = require("../../utils/date");
 const reactionSchema = {
   id: {
     id: Schema.Types.ObjectId,
+    default: () => new Types.ObjectId(),
   },
   body: {
     type: String,

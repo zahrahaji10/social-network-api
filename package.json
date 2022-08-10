@@ -14,8 +14,7 @@
   },
   "scripts": {
     "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
-    "seeds": "node src/seeds/index.js"
+    "dev": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
