@@ -1,7 +1,18 @@
+const { User } = require("../../models");
+
 // get all users
-const getUsers = (req, res) => {
+const getUsers = async (req, res) => {
   try {
-    res.send("getUsers");
+    // get all users using model
+    const users = await User.find({});
+
+    // if no data
+    if (!users) {
+      return res.json(404).json({ success: false });
+    }
+
+    // return data
+    return res.json({ data: users });
   } catch (error) {
     console.log(`[ERROR]: Failed to get users | ${error.message}`);
     return res.status(500).json({ error: "Internal server error" });
@@ -9,10 +20,21 @@ const getUsers = (req, res) => {
 };
 
 // get a user
-const getUserId = (req, res) => {
+const getUserId = async (req, res) => {
   try {
     // get the user id of the user using req.body
-    res.send("getUserId");
+    const { id } = reg.params;
+
+    // get a user using model
+    const user = await User.findById(id);
+
+    // if no data
+    if (!user) {
+      return res.json(404).json({ success: false });
+    }
+
+    // return data
+    return res.json({ data: user });
   } catch (error) {
     console.log(`[ERROR]: Failed to get a user by id | ${error.message}`);
     return res.status(500).json({ error: "Internal server error" });
@@ -20,9 +42,22 @@ const getUserId = (req, res) => {
 };
 
 //  create a user
-const createUser = (req, res) => {
+const createUser = async (req, res) => {
   try {
-    res.send("g createUser");
+    // get the email and userName
+    const { userName, email } = req.body;
+
+    // if no data
+    if (!userName && email) {
+      return res.status(400).json({
+        success: false,
+      });
+    }
+    // create user
+    await User.create({ username, email });
+
+    // return data
+    return res.json({ success: true });
   } catch (error) {
     console.log(`[ERROR]: Failed to get create a user| ${error.message}`);
     return res.status(500).json({ error: "Internal server error" });
