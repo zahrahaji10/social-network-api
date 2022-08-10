@@ -1,12 +1,11 @@
-// ** /api/users/id/friends/ ** endpoint
+// ** /api/users/id/friend/ ** endpoint
 
 // external imports
 const { Router } = require("express");
 
 // internal imports of controller functions
 const {
-  getAFriend,
-  addAFriend,
+  createAFriend,
   deleteAFriend,
 } = require("../../controllers/api/friends");
 
@@ -14,9 +13,8 @@ const {
 const router = Router();
 
 // use the router
-router.get("/", getAFriend);
-router.post("/:id", addAFriend);
-router.delete("/:id", deleteAFriend);
+router.post("/:id/add/:friendId", createAFriend);
+router.delete("/:id/delete/:friendId", deleteAFriend);
 
 // export module
 module.exports = router;

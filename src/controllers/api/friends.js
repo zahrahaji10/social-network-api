@@ -1,24 +1,18 @@
 const { User } = require("../../models");
 
-// get all friends
-const getAFriend = (req, res) => {
-  try {
-    res.send("addAFriend");
-  } catch (error) {
-    console.log(`[ERROR]: Failed to add a friend | ${error.message}`);
-    return res.status(500).json({ error: "Internal server error" });
-  }
-};
-
 //  add a friend
-const addAFriend = async (req, res) => {
+const createAFriend = async (req, res) => {
   try {
-    // get id
-    const { id } = req.params;
+    // get user id and friendId
+    const { id, friendId } = req.params;
 
-    const createAFriend = await User.findByIdAndUpdate(id, {
-      $push: { friends: id },
+    // create the friend using ids
+    await User.findByIdAndUpdate(id, {
+      $push: { friends: friendId },
     });
+
+    // return data
+    return res.json({ success: true });
   } catch (error) {
     console.log(`[ERROR]: Failed to add a friend | ${error.message}`);
     return res.status(500).json({ error: "Internal server error" });
@@ -26,9 +20,17 @@ const addAFriend = async (req, res) => {
 };
 
 //  delete a friend
-const deleteAFriend = (req, res) => {
+const deleteAFriend = async (req, res) => {
   try {
-    res.send("deleteAFriend");
+    // get user id and friendId
+    const { id, friendId } = req.params;
+
+    // delete the friend using ids
+    await User.findByIdAndUpdate(id, {
+      $pull: { friends: friendId },
+    });
+    // return data
+    return res.json({ success: true });
   } catch (error) {
     console.log(`[ERROR]: Failed to delete a friend | ${error.message}`);
     return res.status(500).json({ error: "Internal server error" });
@@ -36,4 +38,4 @@ const deleteAFriend = (req, res) => {
 };
 
 // export all controller fns
-module.exports = { getAFriend, addAFriend, deleteAFriend };
+module.exports = { createAFriend, deleteAFriend };

@@ -22,7 +22,7 @@ router.get("/:id", getUserId);
 router.post("/", createUser);
 router.put("/:id", updateUser);
 router.delete("/:id", deleteUser);
-router.use("/:id/friends", friends);
+router.use("/friends", friends);
 
 // export module
 module.exports = router;
