@@ -1,3 +1,5 @@
+const { User } = require("../../models");
+
 // get all friends
 const getAFriend = (req, res) => {
   try {
@@ -9,9 +11,14 @@ const getAFriend = (req, res) => {
 };
 
 //  add a friend
-const addAFriend = (req, res) => {
+const addAFriend = async (req, res) => {
   try {
-    res.send("addAFriend");
+    // get id
+    const { id } = req.params;
+
+    const createAFriend = await User.findByIdAndUpdate(id, {
+      $push: { friends: id },
+    });
   } catch (error) {
     console.log(`[ERROR]: Failed to add a friend | ${error.message}`);
     return res.status(500).json({ error: "Internal server error" });

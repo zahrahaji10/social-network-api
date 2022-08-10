@@ -23,7 +23,7 @@ const getUsers = async (req, res) => {
 const getUserId = async (req, res) => {
   try {
     // get the user id of the user using req.body
-    const { id } = reg.params;
+    const { id } = req.params;
 
     // get a user using model
     const user = await User.findById(id);
@@ -54,7 +54,7 @@ const createUser = async (req, res) => {
       });
     }
     // create user
-    await User.create({ username, email });
+    await User.create({ userName, email });
 
     // return data
     return res.json({ success: true });
@@ -65,9 +65,26 @@ const createUser = async (req, res) => {
 };
 
 //  update a user
-const updateUser = (req, res) => {
+const updateUser = async (req, res) => {
   try {
-    res.send("updateUser");
+    // get id
+    const { id } = req.params;
+
+    // get the email and userName
+    const { userName, email } = req.body;
+
+    // update user
+    const updateUser = await User.findByIdAndUpdate(id, {
+      userName,
+      email,
+    });
+
+    // if user doesn't exist
+    if (!updateUser) {
+      return res.status(500).json({ success: false });
+    }
+    // return data
+    return res.json({ success: true });
   } catch (error) {
     console.log(`[ERROR]: Failed to update a user| ${error.message}`);
     return res.status(500).json({ error: "Internal server error" });
@@ -75,9 +92,16 @@ const updateUser = (req, res) => {
 };
 
 //  delete a user
-const deleteUser = (req, res) => {
+const deleteUser = async (req, res) => {
   try {
-    res.send("deleteUser");
+    // get id
+    const { id } = req.params;
+
+    // get the user and delete
+    await User.findByIdAndDelete(id);
+
+    // return data
+    return res.json({ success: true });
   } catch (error) {
     console.log(`[ERROR]: Failed to delete a user| ${error.message}`);
     return res.status(500).json({ error: "Internal server error" });

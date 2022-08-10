@@ -11,6 +11,7 @@ const getAllReactions = (req, res) => {
 //  create a reaction
 const createAReactions = (req, res) => {
   try {
+    //
     res.send("createAReactions");
   } catch (error) {
     console.log(`[ERROR]: Failed to create a reaction | ${error.message}`);
