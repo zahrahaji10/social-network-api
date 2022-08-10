@@ -70,14 +70,8 @@ const updateUser = async (req, res) => {
     // get id
     const { id } = req.params;
 
-    // get the email and userName
-    const { userName, email } = req.body;
-
     // update user
-    const updateUser = await User.findByIdAndUpdate(id, {
-      userName,
-      email,
-    });
+    const updateUser = await User.findByIdAndUpdate(id, req.body);
 
     // if user doesn't exist
     if (!updateUser) {
