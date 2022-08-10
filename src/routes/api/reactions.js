@@ -5,7 +5,7 @@ const { Router } = require("express");
 
 // internal imports of controller functions
 const {
-  getAllReactions,
+  updateAReaction,
   createAReactions,
   deleteAReactions,
 } = require("../../controllers/api/reactions");
@@ -15,9 +15,9 @@ const reactions = require("./reactions");
 const router = Router();
 
 // use the router
-router.get("/", getAllReactions);
-router.post("/", createAReactions);
-router.delete("/:id", deleteAReactions);
+router.put("/:thoughtId/update/:reactionId", updateAReaction);
+router.post("/:thoughtId", createAReactions);
+router.delete("/:thoughtId/delete/:reactionId", deleteAReactions);
 
 // export module
 module.exports = router;

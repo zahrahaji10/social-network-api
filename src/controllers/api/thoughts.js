@@ -34,7 +34,7 @@ const getAThoughtsById = async (req, res) => {
     }
 
     // return data
-    return res.json({ data: user });
+    return res.json({ data: thoughts });
   } catch (error) {
     console.log(`[ERROR]: Failed to get a thought by id | ${error.message}`);
     return res.status(500).json({ error: "Internal server error" });
