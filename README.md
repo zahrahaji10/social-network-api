@@ -47,7 +47,7 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 ## Relational Entity Diagram
 
-![entity-relations](https://user-images.githubusercontent.com/102627226/178152687-61b113cf-f276-4aa1-9c40-9ae6c2fa39e8.png)
+![diagram](https://user-images.githubusercontent.com/102627226/184246725-191107d8-cc59-477e-8be3-181b804bd1f6.png)
 
 ## To Start Application
 

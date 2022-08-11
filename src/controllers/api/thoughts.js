@@ -22,7 +22,7 @@ const getThoughts = async (req, res) => {
 // get a thought
 const getAThoughtsById = async (req, res) => {
   try {
-    // get the thoughts id of the user using req.body
+    // get the thoughts id of the user
     const { id } = req.params;
 
     // get a thoughts using model
@@ -44,6 +44,7 @@ const getAThoughtsById = async (req, res) => {
 //  create a thought
 const createAThought = async (req, res) => {
   try {
+    // get the username and text
     const { text, userName } = req.body;
 
     //create a thought
