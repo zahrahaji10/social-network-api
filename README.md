@@ -3,16 +3,36 @@
 ## Table of Content
 
 - [Description](#description)
+- [User Story](#User-Story)
 - [Node Packages](#node-packages)
 - [Relational Entity Diagram](relational-entity-diagram)
-- [Start](#To-start-application)
-- [Installation](#installation)
+- [Start Application](#To-start-application)
 - [Video Demonstration](#video-demonstration)
 - [Questions](#questions)
 
 ## Description
 
-Creating a social network platform, that allows users to share their thoughts, react to friends’ thoughts, and create a friend list.
+Building the backend for a social network platform using express and connecting the server to a mongoDB database. This network enables users to share their thoughts, react to friends’ thoughts, and create a friend list.
+
+## User Story
+
+```md
+AS A social media startup
+I WANT an API for my social network that uses a NoSQL database
+SO THAT my website can handle large amounts of unstructured data
+```
+
+```md
+GIVEN a social network API
+WHEN I enter the command to invoke the application
+THEN my server is started and the Mongoose models are synced to the MongoDB database
+WHEN I open API GET routes in Insomnia for users and thoughts
+THEN the data for each of these routes is displayed in a formatted JSON
+WHEN I test API POST, PUT, and DELETE routes in Insomnia
+THEN I am able to successfully create, update, and delete users and thoughts in my database
+WHEN I test API POST and DELETE routes in Insomnia
+THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list
+```
 
 ## Node Dependencies Packages
 
@@ -52,19 +72,31 @@ npm install
 
 ```
 
-### step 2: connect database
+### step 2: Create .env file
 
-### Step 2 : Database set-up
-
-- The database name for this application is "ecommerce_db".To connect to the database first set up the environment variables, to do this in the root src folder create a .env file. There is an .env.SAMPLE file which you will need to copy the empty template. Then enter the following
+To connect to the database first set up the environment variables, to do this in the root src folder create a .env file. There is an .env.SAMPLE file which you will need to copy the empty template. Then enter the following;
 
 ```
-DB_NAME='social_network_api'
+DB_NAME='network_api'
 ```
 
-## compass
+### step 2: Connect database
 
-## queries
+To successfully connect to the database and start the serve, in your terminal enter the following;
+
+```
+npm run dev
+```
+
+## Postman Queries
+
+To test the application's API routes, you can use postman. This platform enables the interaction with the API by sending requests to the API server and receives the response.
+
+## Video Demonstration
+
+This video walkthrough demonstrates the main functionalities of this social network API.
+
+![Click here to watch application demonstration]()
 
 ## Questions
 
