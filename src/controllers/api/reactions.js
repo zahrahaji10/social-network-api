@@ -23,7 +23,7 @@ const createAReactions = async (req, res) => {
   }
 };
 
-//  delete a reaction
+//  update a reaction
 const updateAReaction = async (req, res) => {
   try {
     // get id

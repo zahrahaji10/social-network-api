@@ -44,7 +44,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/api/users/62f3fcd8011d53e1b0c66fbc",
+					"raw": "http://localhost:4000/api/users/id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -53,7 +53,7 @@
 					"path": [
 						"api",
 						"users",
-						"62f3fcd8011d53e1b0c66fbc"
+						"id"
 					]
 				}
 			},
@@ -66,7 +66,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userName\": \"alice-smith\",\r\n    \"email\": \"alice-smith@gamil.com\"\r\n}",
+					"raw": "{\r\n    \"userName\": \"zahra\",\r\n    \"email\": \"zahra@gmail.com\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -96,7 +96,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userName\": \"NEW-username\",\r\n    \"email\": \"zahra@gamil.com\"\r\n}",
+					"raw": "{\r\n    \"userName\": \"\",\r\n    \"email\": \"\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -104,7 +104,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/api/users/62f3fcd8011d53e1b0c66fbc",
+					"raw": "http://localhost:4000/api/users/id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -113,7 +113,7 @@
 					"path": [
 						"api",
 						"users",
-						"62f3fcd8011d53e1b0c66fbc"
+						"id"
 					]
 				}
 			},
@@ -125,7 +125,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/api/users/62f3fcd8011d53e1b0c66fbc",
+					"raw": "http://localhost:4000/api/users/id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -134,7 +134,7 @@
 					"path": [
 						"api",
 						"users",
-						"62f3fcd8011d53e1b0c66fbc"
+						"id"
 					]
 				}
 			},
@@ -146,7 +146,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/api/users/id/friends/",
+					"raw": "http://localhost:4000/api/users/friends/userid/add/friendid",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -155,9 +155,10 @@
 					"path": [
 						"api",
 						"users",
-						"id",
 						"friends",
-						""
+						"userid",
+						"add",
+						"friendid"
 					]
 				}
 			},
@@ -166,10 +167,10 @@
 		{
 			"name": "delete a friend",
 			"request": {
-				"method": "GET",
+				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/api/users/id/friends/",
+					"raw": "http://localhost:4000/api/users/friends/userid/delete/friendid",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -178,9 +179,10 @@
 					"path": [
 						"api",
 						"users",
-						"id",
 						"friends",
-						""
+						"userid",
+						"delete",
+						"friendid"
 					]
 				}
 			},
@@ -196,7 +198,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"text\": \"new comment\",\r\n            \"userName\": \"alice-smith\",\r\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -204,7 +206,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/api/thoughts/62f415263a467ff436209ac2",
+					"raw": "http://localhost:4000/api/thoughts",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -212,8 +214,7 @@
 					"port": "4000",
 					"path": [
 						"api",
-						"thoughts",
-						"62f415263a467ff436209ac2"
+						"thoughts"
 					]
 				}
 			},
@@ -225,7 +226,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/api/thoughts/",
+					"raw": "http://localhost:4000/api/thoughts/id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -234,7 +235,7 @@
 					"path": [
 						"api",
 						"thoughts",
-						""
+						"id"
 					]
 				}
 			},
@@ -247,7 +248,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"text\": \"new date11\",\r\n    \"userName\": \"alice-smith\"\r\n}",
+					"raw": "\r\n{\r\n    \"text\": \"Hi there!!\",\r\n    \"userName\": \"alex-smith\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -273,35 +274,11 @@
 		{
 			"name": "update a thought",
 			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "delete a reaction",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "create a reaction",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "update a reaction",
-			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "\r\n{\r\n    \"body\": \"REACTION NOW UPDATED!!\",\r\n    \"userName\": \"bob-smith\"\r\n}",
+					"raw": "{\r\n    \"text\": \"changing the comment !!\",\r\n    \"userName\": \"alice-smith\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -309,7 +286,49 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/api/thoughts/reactions/62f40d70d18fbc994336be7c/update/62f41ff3b40f1b857a7cf7a6",
+					"raw": "http://localhost:4000/api/thoughts/62f415263a467ff436209ac2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"thoughts",
+						"62f415263a467ff436209ac2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete a thought",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/thoughts/62f415263a467ff436209ac2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"thoughts",
+						"62f415263a467ff436209ac2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete a reaction",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/thoughts/reactions/thoughtid/delete/reactionid",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -319,9 +338,40 @@
 						"api",
 						"thoughts",
 						"reactions",
-						"62f40d70d18fbc994336be7c",
-						"update",
-						"62f41ff3b40f1b857a7cf7a6"
+						"thoughtid",
+						"delete",
+						"reactionid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create a reaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"body\": \"\",\r\n    \"userName\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/thoughts/reactions/62f40d70d18fbc994336be7c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"thoughts",
+						"reactions",
+						"62f40d70d18fbc994336be7c"
 					]
 				}
 			},

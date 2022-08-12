@@ -90,13 +90,15 @@ npm run dev
 
 ## Postman Queries
 
-To test the application's API routes, you can use postman. This platform enables the interaction with the API by sending requests to the API server and receives the response.
+To test the application's API routes, you can use postman. This platform enables the interaction with the API by sending requests to the API server and receives the response. Import the social-network-api file to help get all the requests and carry out the requests.
+
+![test-api](https://user-images.githubusercontent.com/102627226/184348073-6346b3da-20d2-48fe-83da-fd1fb02fd2c0.png)
 
 ## Video Demonstration
 
 This video walkthrough demonstrates the main functionalities of this social network API.
 
-![Click here to watch application demonstration]()
+![Click here to Watch Demo](https://watch.screencastify.com/v/cTy1329YvzJSAE46AJCx)
 
 ## Questions
 
