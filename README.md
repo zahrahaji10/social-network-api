@@ -98,7 +98,7 @@ To test the application's API routes, you can use postman. This platform enables
 
 This video walkthrough demonstrates the main functionalities of this social network API.
 
-![Click here to Watch Demo](https://watch.screencastify.com/v/cTy1329YvzJSAE46AJCx)
+[Click Here](https://watch.screencastify.com/v/cTy1329YvzJSAE46AJCx)
 
 ## Questions
 
